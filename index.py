@@ -38,7 +38,12 @@ def build_map(df=None):
     if df is None:
         df = load_devices()
 
-    m = Map(location=[df['Широта'].mean(), df['Долгота'].mean()], zoom_start=5)
+    # Подложка CARTO: тайлы OpenStreetMap отвечают 403, если map.html открыт как локальный файл
+    m = Map(
+        location=[df['Широта'].mean(), df['Долгота'].mean()],
+        zoom_start=5,
+        tiles='CartoDB positron',
+    )
 
     # Граница Казахстана: контур с почти прозрачной заливкой
     GeoJson(
