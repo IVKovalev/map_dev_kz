@@ -1,0 +1,5 @@
+# Jupyter autosaves
+.ipynb_checkpoints/
+
+# Generated map
+map.html
