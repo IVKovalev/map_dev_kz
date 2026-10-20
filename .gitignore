@@ -3,3 +3,6 @@
 
 # Generated map
 map.html
+
+# Python cache
+__pycache__/
